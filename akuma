@@ -1,0 +1,28 @@
+#!/bin/sh
+clear
+toilet -f big Akuma  | lolcat
+echo "LoliC0d3 - Tegal1337" | lolcat
+echo "
+1.Remove Http/Https
+2.Domain To Ip
+99.Exit
+" | lolcat
+read -p "senpai@tegalsec:~#" select
+if [[ $select == 1 ]]; then
+  read -p "List: " list
+  read -p "Save To: " save
+  cat $list | awk -F[/:] '{print $4}' >> $save
+elif [[ $select == 2 ]]; then
+  echo "note: dont use http/https"
+  read -p "List: " list
+  while  IFS= read -r list; do
+    resolveip -s "$list" <&- &
+    IFS= read -r list || break
+    resolveip -s "$list" <&- &
+  done < $list |  sed 's/[^0-9.]*//g' | tee -a tmp.txt
+   sort -u tmp.txt >> ips.txt | rm tmp.txt
+elif [[ $select == 99 ]]; then
+    echo "Oke"
+else
+  echo "Your Brain Error!"
+fi
