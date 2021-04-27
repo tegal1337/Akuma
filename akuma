@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#install modul lolcat,toilet
 m="\e[0;31m" # merah
 k="\e[0;33m" # kuning
 h="\e[0;32m" # hijau
