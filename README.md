@@ -1,4 +1,4 @@
-<p>Please install modul lolcat and toilet</p>
+<p><b>Please install modul lolcat and toilet</b></p>
 <b>Debian/Ubuntu</b>
 <p>sudo apt install lolcat</p>
 <p>sudo apt install toilet</p>
