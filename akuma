@@ -42,7 +42,8 @@ elif [[ $select == 2 ]]; then
     IFS= read -r list || break
     resolveip -s "$list" <&- &
   done < $list |  sed 's/[^0-9.]*//g' | tee -a tmp.txt
-   sort -u tmp.txt >> ips.txt | rm tmp.txt
+   sort -u tmp.txt >> ips.txt 
+   rm tmp.txt
 elif [[ $select == 3 ]]; then
   ls
   Reverse()
